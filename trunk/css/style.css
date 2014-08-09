@@ -324,9 +324,11 @@ body {
 }
 .content {
 	width: 74%;
-	padding: 10px 0;
+	/* padding: 10px 0; */
 	background: #FFF;
-	margin-left: 280px;
+	float: right;
+	margin-top: 30px;
+	/* margin-left: 280px; */
 	/*margin-top: -20px;*/
 }
 .content h2 {
@@ -353,10 +355,10 @@ body {
 }
 .content1_top{
 	border: 1px solid #EBE8E8;
-	padding: 16px 20px;
+	padding: 15px 20px 18px;/* moi them cho padding-bottom 18 px thay cho 15px */
 	border-radius: 3px;
 	background: #ebe8e8;
-	margin-top: 2px;
+	/* margin-top: 2px; */
 }
 .contact_chat{
 	border: 1px solid #EBE8E8;
@@ -375,7 +377,7 @@ body {
 	padding: 15px 20px;
 	border: 1px solid #EBE8E8;
 	border-radius: 3px;
-	margin-top: 2.6%;
+	/* margin-top: 2.6%; */
 	background: #ebe8e8;
 }
 .heading {
