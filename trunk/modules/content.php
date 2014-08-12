@@ -29,6 +29,19 @@ if (isset ( $_GET ['ac'] )) {
 		case "detail_news":
 			include 'modules/detail_news.php';
 			break;
+		case "allproduct":
+			include 'modules/header_bottom.php';
+			?>
+			<div id="content">
+				<div class="main">
+					<?php include 'modules/content_left.php'; ?>
+					<div class="content">
+			   			<?php include 'modules/allproduct.php'; ?>
+			   		</div>
+				</div>
+			</div>
+		<?php
+			break;
 		default :
 			include 'modules/header_bottom.php';
 			?>

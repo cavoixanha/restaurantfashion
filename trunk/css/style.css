@@ -417,6 +417,10 @@ body {
 .grid_1_of_4:first-child {
 	margin-left: 0;
 }
+/*lấy cái đầu tiên của 1 dòng 4 cái không có margin left khỏi bị nhảy khỏi dòng*/
+.grid_1_of_4_first {
+	margin-left: 0;
+}
 .images_1_of_4 {
 	width: 20.8%;
 	padding: 1.5%;

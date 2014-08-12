@@ -1,29 +1,69 @@
 <div class="main">
 	<div class="content_tt">
-		<?php 
-		$query = "select * from tbl_tin_tuc order by ngay_dang desc LIMIT 0,4";
+		<?php
+		// phân trang cho tin tức
+		if (isset ( $_GET ['page'] )) {
+			$page = $_GET ['page'];
+		} else {
+			$page = 1;
+		}
+		$start_from = ($page - 1) * 4;
+		$query = "select * from tbl_tin_tuc order by ngay_dang desc LIMIT $start_from , 4";
 		$result = mysql_db_query ( "web_ban_quan_ao", $query );
-		if(!$result)
-		{
-			echo "Loi ".mysql_error($result);
+		if (! $result) {
+			echo "Loi " . mysql_error ( $result );
 		}
 		while ( $row_tintuc = mysql_fetch_assoc ( $result ) ) {
-		?>
+			?>
 		<div class="image group">
 			<div class="grid images_3_of_1">
 				<img src="<?php echo $row_tintuc['anh_minh_hoa'] ?>" alt="" />
 			</div>
 			<div class="grid news_desc">
-				<h3><a href="index.php?ac=detail_news&id_tin_tuc=<?php echo $row_tintuc['id_tin_tuc'] ?>"><?php echo $row_tintuc['tieu_de'] ?></a></h3>
+				<h3>
+					<a
+						href="index.php?ac=detail_news&id_tin_tuc=<?php echo $row_tintuc['id_tin_tuc'] ?>"><?php echo $row_tintuc['tieu_de'] ?></a>
+				</h3>
 				<h4>
-					Đăng ngày <?php echo $row_tintuc['ngay_dang'] ?> bởi <span><a href="#">quiviteam</a></span>
+					Đăng ngày <?php echo $row_tintuc['ngay_dang'] ?> bởi <span><a
+						href="#">quiviteam</a></span>
 				</h4>
-				<?php echo $row_tintuc['noi_dung'] ?><a href="index.php?ac=detail_news&id_tin_tuc=<?php echo $row_tintuc['id_tin_tuc'] ?>" title="more">[....]</a>
+				<?php echo substr($row_tintuc['noi_dung'], 0, strlen($row_tintuc['noi_dung'])-4).
+				'<a href="index.php?ac=detail_news&id_tin_tuc='.$row_tintuc["id_tin_tuc"].'" title="more" >[....]</a></p>' ?>
 			</div>
 		</div>
-		<?php 
+		<?php
 		}
+		
+		// link so trang
+		$sqlsotrang = "SELECT COUNT(id_tin_tuc) FROM tbl_tin_tuc";
+		$rs_result = mysql_db_query ( "web_ban_quan_ao", $sqlsotrang );
+		$row = mysql_fetch_row ( $rs_result );
+		$total_records = $row [0];
+		// $total_records = mysql_num_rows($rs_result);
+		$total_page = ceil ( $total_records / 4 );
 		?>
+		<div class="content-pagenation">
+			<ul>
+				<li><a href="index.php?ac=news">Frist</a></li>
+			<?php
+			for($i = 1; $i <= $total_page; $i ++) {
+				if ($i == $page) {
+					?>
+				<li class="active"><a
+					href="index.php?ac=news&page=<?php echo $i ?>"><?php echo $i ?></a></li>
+				<?php
+				} else {
+					?>
+				<li><a href="index.php?ac=news&page=<?php echo $i ?>"><?php echo $i ?></a></li>
+			<?php
+				}
+			}
+			?>
+				<li><a href="index.php?ac=news&page=<?php echo $total_page ?>">Last</a></li>
+			</ul>
+			<div class="clear"></div>
+		</div>
 		<!-- <div class="image group">
 			<div class="grid images_3_of_1">
 				<img src="images/newsimg1.jpg" alt="" />
@@ -96,14 +136,16 @@
 				</p>
 			</div>
 		</div> -->
-		<div class="content-pagenation">
-			<li><a href="#">Frist</a></li>
-			<li class="active"><a href="#">1</a></li>
-			<li><a href="#">2</a></li>
-			<li><a href="#">3</a></li>
-			<li><span>....</span></li>
-			<li><a href="#">Last</a></li>
-			<div class="clear"></div>
-		</div>
+		<!-- <div class="content-pagenation">
+			<ul>
+				<li><a href="#">Frist</a></li>
+				<li class="active"><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">....</a></li>
+				<li><a href="#">Last</a></li>
+				<div class="clear"></div>
+			</ul>
+		</div> -->
 	</div>
 </div>

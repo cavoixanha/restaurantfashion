@@ -32,19 +32,18 @@
 <body>
 	<div class="wrap">
 		<div class="header">
-			<?php 
+			<?php
 			include_once 'modules/config.php';
 			include 'modules/header_top.php';
-			if (isset($_GET['id'])) {
-				$id_san_pham = $_GET['id'];
-				$query = "select * from tbl_san_pham where id_san_pham = ".$id_san_pham;
+			if (isset ( $_GET ['id'] )) {
+				$id_san_pham = $_GET ['id'];
+				$query = "select * from tbl_san_pham where id_san_pham = " . $id_san_pham;
 				$result = mysql_db_query ( "web_ban_quan_ao", $query );
-				if(!$result)
-				{
-					echo "Loi ".mysql_error();
+				if (! $result) {
+					echo "Loi " . mysql_error ();
 				}
 				while ( $row = mysql_fetch_assoc ( $result ) ) {
-			?>
+					?>
 			
 			<div class="main">
 				<div class="content_view">
@@ -60,7 +59,8 @@
 											<div id="products">
 												<div class="slides_container">
 													<a href="#" target="_blank"><img
-														src="<?php echo $row['anh_dai_dien'] ?>" alt="shop_quan_ao" /></a>
+														src="<?php echo $row['anh_dai_dien'] ?>"
+														alt="shop_quan_ao" /></a>
 												</div>
 											</div>
 										</div>
@@ -76,16 +76,25 @@
 									<div class="available">
 										<p>Lựa chọn :</p>
 										<ul>
-											<li>Màu: <select>
-													<option>Bạc</option>
-													<option>Đen</option>
-													<option>Vàng</option>
-													<option>Đỏ</option>
-											</select></li>
+											<li>Màu: 
+												<select>
+														<option>Bạc</option>
+														<option>Đen</option>
+														<option>Vàng</option>
+														<option>Đỏ</option>
+												</select>
+											</li>
 											<li>Size:<select>
-													<option>M</option>
-													<option>L</option>
-													<option>S</option>
+											<?php
+											$mang_size = explode ( ",", $row ["size"] );
+											for($i = 0; $i < count ( $mang_size ); $i ++) {
+											?>
+												<option><?php echo $mang_size[$i] ?></option>
+												<!-- <option>L</option>
+												<option>S</option> -->
+											<?php
+											}
+											?>
 											</select></li>
 											<li>Số lượng:<select>
 													<option>1</option>
@@ -127,7 +136,7 @@
 										<div class="product-desc">
 											<!-- <p></p> -->
 											<h3><?php echo $row['tieu_de'] ?></h3>
-											<?php echo $row['noi_dung'] ?>
+											<?php echo $row['noi_dung']?>
 										</div>
 
 									</div>
@@ -155,75 +164,60 @@
 								<div class="clear"></div>
 							</div>
 							<div class="section group">
-								<?php 
-								$query = "select * from tbl_san_pham where id_nhom_sp = ".$row['id_nhom_sp']." LIMIT 0,4";
-								$result = mysql_db_query ( "web_ban_quan_ao", $query );
-								if(!$result)
-								{
-									echo "Loi ".mysql_error();
-								}
-								
-								//Lấy Những Sản Phẩm trong nhóm
-								while ( $row_nhom = mysql_fetch_assoc ( $result ) ) {
-								?>
+								<?php
+					$query = "select * from tbl_san_pham where id_nhom_sp = " . $row ['id_nhom_sp'] . " LIMIT 0,4";
+					$result = mysql_db_query ( "web_ban_quan_ao", $query );
+					if (! $result) {
+						echo "Loi " . mysql_error ();
+					}
+					
+					// Lấy Những Sản Phẩm trong nhóm
+					while ( $row_nhom = mysql_fetch_assoc ( $result ) ) {
+						?>
 								<div class="grid_1_of_4 images_1_of_4_detail">
-									<a href="#"><img src="<?php echo $row_nhom['anh_dai_dien'] ?>" alt="" /></a>
+									<a href="#"><img src="<?php echo $row_nhom['anh_dai_dien'] ?>"
+										alt="" /></a>
 									<div class="price" style="border: none">
 										<div class="add-cart_view" style="float: none">
 											<h4>
-												<a href="preview.php?id=<?php echo $row_nhom['id_san_pham'] ?>">Chi tiết</a>
+												<a
+													href="preview.php?id=<?php echo $row_nhom['id_san_pham'] ?>">Chi
+													tiết</a>
 											</h4>
 										</div>
 										<div class="clear"></div>
 									</div>
 								</div>
-								<?php 
-								}
-								?>
+								<?php
+					}
+					?>
 							</div>
 						</div>
 						<div class="header_bottom_left_view">
 							<div class="categories_view">
+								<h3>DANH MỤC SẢN PHẨM</h3>
 								<ul class="ac-menu">
-									<h3>DANH MỤC SẢN PHẨM</h3>
-									<li id="one"><a href="#one">Áo nữ</a>
+									<?php 
+									$query_dm = "select * from tbl_danh_muc";
+									$result_dm = mysql_db_query ( "web_ban_quan_ao", $query_dm );
+									while ( $row_dm = mysql_fetch_assoc ( $result_dm ) ) {
+									?>
+									<li id="<?php echo $row_dm['id_danh_muc'] ?>"><a href="#<?php echo $row_dm['id_danh_muc'] ?>"><?php echo $row_dm["ten_danh_muc"] ?></a>
 										<ul class="sub-menu">
-											<li><a href="#one">Áo thun</a></li>
-										</ul></li>
-									<li id="two"><a href="#two">Váy Đầm</a>
-										<ul class="sub-menu">
-											<li><a href="#two">Chân váy</a></li>
-											<li><a href="#two">Đầm dự tiệc</a></li>
-											<li><a href="#two">Set váy</a></li>
-										</ul></li>
-									<li id="three"><a href="#three">Quần nữ</a>
-										<ul class="sub-menu">
-											<li><a href="#three">Quần jean dài</a></li>
-											<li><a href="#three">Quần jean short</a></li>
-										</ul></li>
-									<li id="four"><a href="#four">Giày nữ</a>
-										<ul class="sub-menu">
-											<li><a href="#four">Giày thể thao</a></li>
-											<li><a href="#four">Giày sandal</a></li>
-											<li><a href="#four">Giày cao gót</a></li>
-										</ul></li>
-									<li><a href="#">Jumsuil</a></li>
-									<li id="five"><a href="#five">Phụ kiện</a>
-										<ul class="sub-menu">
-											<li><a href="#five">Đồng hồ</a></li>
-											<li><a href="#five">Giỏ sách</a></li>
-											<li><a href="#five">Ví</a></li>
-										</ul></li>
-									<li><a href="#">Mỹ Phẩm</a></li>
-									<li id="six"><a href="#six">Áo nam</a>
-										<ul class="sub-menu">
-											<li><a href="#six">Áo thun</a></li>
-											<li><a href="#six">Áo sơ-mi</a></li>
-										</ul></li>
-									<li><a href="#">Quần nam</a></li>
-
-									<li><a href="#">Loại khác</a></li>
-
+										<?php 
+										$query_sub = "select * from tbl_nhom_sp where id_danh_muc = " . $row_dm ["id_danh_muc"];
+										$result_sub = mysql_db_query ( "web_ban_quan_ao", $query_sub );
+										while ( $row_sub = mysql_fetch_assoc ( $result_sub ) ) {
+										?>
+											<li><a href="index.php?ac=detail_nhom&&id_nhom_sp=<?php echo $row_sub ["id_nhom_sp"] ?>&ten_nhom_sp=<?php echo $row_sub ['ten_nhom_sp'] ?>"><?php echo $row_sub ["ten_nhom_sp"]  ?></a></li>
+										<?php
+										}
+										?>
+										</ul>
+									</li>
+									<?php 
+									}
+									?>
 								</ul>
 							</div>
 						</div>
@@ -233,10 +227,10 @@
 		</div>
 		
 		<?php
+				}
 			}
- 		}
-		include 'modules/footer.php'; 
-		?>
+			include 'modules/footer.php';
+			?>
 		
 		<script type="text/javascript">
 			$(document).ready(function() {
