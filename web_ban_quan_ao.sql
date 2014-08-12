@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 09, 2014 at 05:43 PM
+-- Generation Time: Aug 12, 2014 at 06:29 PM
 -- Server version: 5.5.34
 -- PHP Version: 5.4.22
 
@@ -172,7 +172,7 @@ CREATE TABLE IF NOT EXISTS `tbl_san_pham` (
   PRIMARY KEY (`id_san_pham`),
   UNIQUE KEY `id_san_pham` (`id_san_pham`),
   KEY `FK_id_nhom_sp` (`id_nhom_sp`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
 
 --
 -- Dumping data for table `tbl_san_pham`
@@ -184,7 +184,14 @@ INSERT INTO `tbl_san_pham` (`id_san_pham`, `ten_san_pham`, `id_nhom_sp`, `size`,
 (3, 'Áo Nữ', 9, 'M', 0, '200000', 100, 0, 'Áo Nữ', 'images/shopmeo/hinhmau/hm16.jpg', 'Mô Tả Áo Nữ', '2014-08-04 12:00:00'),
 (4, 'Váy Trắng', 10, 'M', 0, '200000', 100, 0, 'Váy Trắng', 'images/shopmeo/hinhmau/hm15.jpg', 'Mô Tả Váy Trắng', '2014-08-04 13:00:00'),
 (5, 'Váy Đẹp', 10, 'M', 0, '200000', 100, 0, 'Váy Đẹp', 'images/shopmeo/hinhmau/hm13.jpg', 'Mô Tả Váy', '2014-08-04 14:00:00'),
-(6, 'Váy Bông Hồng', 10, 'M', 0, '200000', 100, 10, 'Váy Đẹp', 'images/shopmeo/hinhmau/hm10.jpg', 'Mô Tả Váy', '2014-08-04 15:00:00');
+(6, 'Váy Bông Hồng', 10, 'M', 0, '200000', 100, 10, 'Váy Đẹp', 'images/shopmeo/hinhmau/hm10.jpg', 'Mô Tả Váy', '2014-08-04 15:00:00'),
+(7, 'Áo Thun Xám', 8, 'M, L', 0, '150000', 14, 15, 'Áo Thun Xám', 'images/shopmeo/aothun/aothun1.jpg', 'Áo Thun Xám', '2014-08-11 15:00:00'),
+(8, 'Áo Thun Hồng Nhạt', 8, 'M, L', 0, '12000', 150, 0, 'Áo Thun Hồng Nhạt', 'images/shopmeo/aothun/aothun2.jpg', 'Áo Thun Hồng Nhạt', '2014-08-11 17:00:00'),
+(9, 'Áo Thun Xám Chấm', 8, 'M, L', 0, '150000', 14, 15, 'Áo Thun Xám', 'images/shopmeo/aothun/aothun3.jpg', 'Áo Thun Xám Chấm', '2014-08-11 17:00:00'),
+(10, 'Áo Thun Trắng Cổ Viền', 8, 'M, L', 0, '150000', 14, 15, 'Áo Thun Trắng Cổ Viền', 'images/shopmeo/aothun/aothun4.jpg', 'Áo Thun Trắng Cổ Viền', '2014-08-11 16:00:00'),
+(11, 'Áo Thun Xanh Nhạt', 8, 'M, L', 0, '150000', 14, 15, 'Áo Thun Xanh Nhạt', 'images/shopmeo/aothun/aothun5.jpg', 'Áo Thun Xanh Nhạt', '2014-08-11 16:00:00'),
+(12, 'Áo Thun Xanh Đậm', 8, 'M, L', 0, '150000', 14, 15, 'Áo Thun Xanh Đậm', 'images/shopmeo/aothun/aothun6.jpg', 'Áo Thun Xanh Đậm', '2014-08-11 18:00:00'),
+(13, 'Áo Thun Cam', 8, 'M, L', 0, '150000', 14, 0, 'Áo Thun Cam', 'images/shopmeo/aothun/aothun7.jpg', 'Áo Thun Cam', '2014-08-11 18:00:00');
 
 -- --------------------------------------------------------
 
@@ -199,15 +206,18 @@ CREATE TABLE IF NOT EXISTS `tbl_tin_tuc` (
   `noi_dung` text NOT NULL,
   `ngay_dang` datetime NOT NULL,
   PRIMARY KEY (`id_tin_tuc`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `tbl_tin_tuc`
 --
 
 INSERT INTO `tbl_tin_tuc` (`id_tin_tuc`, `tieu_de`, `anh_minh_hoa`, `noi_dung`, `ngay_dang`) VALUES
-(1, 'Lịch lãm phong cách thời trang nam trong mùa mưa', 'images/tintuc/style-rain-150x150.jpg', '<div class="left-thumbnail">\r\n<p style="text-align: justify;">\r\n<p style="text-align: justify;">Mùa mưa không nằm trong các xu hướng catwalk tại các show thời trang lớn trong năm nhưng xu hướng thời trang mùa mưa đang ngày các được quan tâm, bởi cuộc sống ngày càng hối hả và chúng ta sẽ không trốn tránh lười biếng mãi ở nhà để phòng trừ những cơn mưa cho đến hết mùa. Mọi người đều có nhu cầu đi học, đi làm và vui chơi giải trí hằng ngày, vì thế, để giữ được niềm vui và sự hứng khởi trong cuộc sống, chỉ cần một chút tinh tế các chàng trai có thể lựa chọn cho mình những trang phục phù hợp và không quản ngại những vạt mưa thấm ướt.</p>', '2014-08-09 10:00:00'),
-(2, 'Giày nhựa sành điệu cho mùa mưa ', 'images/tintuc/1.png', '<p style="text-align: justify;">Ngoài ra, trong thế giới thời trang nam khiêm tốn, bạn vẫn còn rất nhiều sự lựa chọn để “diện” đồ thật thoải mái và cá tính, thể hiện phong cách trẻ năng động và không quản ngại mưa gió “ngáng chân cảng đường”. Các bạn nam của chúng ta có thể lựa chọn những loại trang phục với kiểu dáng, chất liệu rất “hợp mùa” và tiện dụng như quần kaki, quần linen, quần thun thể thao hay quần sooc kaki, đây là các lựa chọn thay thế cho jean, đem lại cảm giác nhẹ nhàng và thoải mái trong mùa mưa ẩm ướt.</p>', '2014-08-09 11:00:00');
+(1, 'Lịch lãm phong cách thời trang nam trong mùa mưa', 'images/tintuc/style-rain-150x150.jpg', '<p>Mùa mưa không nằm trong các xu hướng catwalk tại các show thời trang lớn trong năm nhưng xu hướng thời trang mùa mưa đang ngày các được quan tâm, bởi cuộc sống ngày càng hối hả và chúng ta sẽ không trốn tránh lười biếng mãi ở nhà để phòng trừ những cơn mưa cho đến hết mùa. Mọi người đều có nhu cầu đi học, đi làm và vui chơi giải trí hằng ngày, vì thế, để giữ được niềm vui và sự hứng khởi trong cuộc sống, chỉ cần một chút tinh tế các chàng trai có thể lựa chọn cho mình những trang phục phù hợp và không quản ngại những vạt mưa thấm ướt.</p>', '2014-08-09 10:00:00'),
+(2, 'Giày nhựa sành điệu cho mùa mưa ', 'images/tintuc/1.png', '<p style="text-align: justify;">Ngoài ra, trong thế giới thời trang nam khiêm tốn, bạn vẫn còn rất nhiều sự lựa chọn để “diện” đồ thật thoải mái và cá tính, thể hiện phong cách trẻ năng động và không quản ngại mưa gió “ngáng chân cảng đường”. Các bạn nam của chúng ta có thể lựa chọn những loại trang phục với kiểu dáng, chất liệu rất “hợp mùa” và tiện dụng như quần kaki, quần linen, quần thun thể thao hay quần sooc kaki, đây là các lựa chọn thay thế cho jean, đem lại cảm giác nhẹ nhàng và thoải mái trong mùa mưa ẩm ướt.</p>', '2014-08-09 11:00:00'),
+(3, '"Cơn lốc" săn hàng hiệu bình dân giảm giá', 'images/newsimg1.jpg', '<p>Từ nhiều năm nay, các tín đồ thời trang Việt đã dần quen thuộc với các thương hiệu thời trang quốc tế, đặc biệt là những thương hiệu bình dân có tính ứng dụng cao như Zara, H&M, Top shop... Tuy vậy, với đại đa số chị em thì mức giá được cho là bình dân của nước ngoài vẫn còn khá cao. Hơn nữa, để mua được hàng chính hãng lại khá mất công. Nếu không thể trực tiếp ra nước ngoài mua đồ, phần lớn chị em chọn cách nhờ mua qua người thân xách tay về, hoặc đặt hàng\r\n qua các cửa hàng nhận đặt và chuyển phát nhanh... Những cách như vậy còn nhiều hạn chế vì sẽ đội chi phí lên cao và khá mất công chọn, đặt. Việc đặt hàng này chỉ thực sự nở rộ khi tới những kỳ giảm giá lớn mà các hãng tung ra hàng năm.</p>', '2014-08-12 00:00:00'),
+(4, 'Mẫu sinh đôi "gây bão" khi rủ casting thời trang', 'images/newsimg2.jpg', '<p>Không giống bất kỳ buổi casting người mẫu nào khác từng diễn ra\r\n					trong làng thời trang Việt trước đây, buổi casting mẫu cho show\r\n					thời trang Thu/Đông của NTK Đỗ Mạnh Cường diễn ra vào sáng qua\r\n					(22/6) thu hút sự chú ý khi bất ngờ xuất hiện hằng trăm cặp sinh\r\n					đôi, thậm chí còn có những trường hợp sinh ba đến tìm hiếm cơ hội\r\n					làm mẫu..</p>\r\n				<p>\r\n					Tất cả những cặp song sinh, sinh ba được lựa chọn sẽ được lấy số đo\r\n					và thiết kế riêng để phù hợp với vóc dáng của từng người. Đó cũng\r\n					chính là lý do vì sao mà buổi casting được diển ra khá sớm trước 5\r\n					tháng để có sự chuần bị kỹ lưỡng.<a href="#" title="more">[....]</a>\r\n				</p>', '2014-08-12 09:00:00'),
+(5, 'Sự âm thầm trở lại của thân hình siêu mỏng', 'images/newsimg3.jpg', '<p>Thân hình size 0 đã trở thành một trào lưu phổ biến trong nhiều\r\n					năm về trước. Những người mẫu khẳng khiu trên sàn catwalk, những\r\n					ngôi sao ép cân để diện trang phục khi ra phố... tất cả đã tạo nên\r\n					"cơn sốt" giữ vóc dáng siêu mỏng với phụ nữ khắp thế giới. Nhưng\r\n					cũng như sự tuần hoàn của thời trang, trào lưu mình dây đã rơi vào\r\n					thoái trào, nhường ngôi cho những thân hình nóng bỏng, đầy đặn hơn.\r\n					Các ngôi sao có thân hình đồng hồ cát như Jennifer Lopez, Rihanna,\r\n					Christina Aguilera,...</p>\r\n				<p>\r\n					Điều gì đang xảy ra trên phố? Đối với những cô gái trẻ, những người\r\n					luôn rất nhạy cảm với thời trang và mọi xu hướng, điều tương tự\r\n					dường như đang xảy ra, không ít trong số họ cũng tôn sùng kiểu mình\r\n					dây từ các ngôi sao Hollywood.<a href="#" title="more">[....]</a>\r\n				</p>', '2014-08-12 09:00:00');
 
 --
 -- Constraints for dumped tables

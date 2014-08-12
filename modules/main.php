@@ -1,10 +1,15 @@
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".grid_1_of_4:nth-child(4n+1)").addClass("grid_1_of_4_first");
+});
+</script>
 <div class="content_bottom">
 	<div class="heading">
 		<h3>Sản phẩm mới</h3>
 	</div>
 	<div class="see">
 		<p>
-			<a href="#">Xem tất cả</a>
+			<a href="index.php?ac=allproduct">Xem tất cả</a>
 		</p>
 	</div>
 	<div class="clear"></div>
