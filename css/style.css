@@ -25,6 +25,9 @@ img{max-width:100%;}
     font-family: 'ambleregular';
     src:url(../font/Amble-Regular-webfont.ttf) format('truetype');
 }
+html, body,.main{
+	height: 100%;
+}
 body {
 	font-family: Arial, Helvetica, sans-serif;
 	background: #FFF;
@@ -32,6 +35,8 @@ body {
 .wrap {
 	width:80%;
 	margin: 0 auto;
+	min-height: 100%;
+	position: relative;
 }
 .header {
 	background: #FFF;
@@ -319,9 +324,11 @@ body {
 	padding-left:1%;
 }
 /***** Content *****/
-.main{
-	width: 100%;
-}
+/*#content{
+	min-height: 100%;
+	padding-bottom:0px;
+}*/
+
 .content {
 	width: 74%;
 	/* padding: 10px 0; */
@@ -342,8 +349,10 @@ body {
 	text-transform: uppercase;
 }
 .content1_left{
+	position: relative;
+	min-height: 100%;
 	width: 25%;
-	height: 11px;
+	/*height: 11px;*/
 	float: left;
 	margin-top:30px;
 }
@@ -352,6 +361,8 @@ body {
 }
 .news{
 	padding-top: 20px;
+	position: relative;
+	min-height: 100%;
 }
 .content1_top{
 	border: 1px solid #EBE8E8;
@@ -680,13 +691,19 @@ body {
 	float: right;
 }
 /*** Footer ***/
-
-.footer {
-	position: relative;
+/*.main{
+	clear: both;
+	width: 100%;
+	padding-bottom: 150px;
+	
+}*/
+.footer{
+    position: relative;
 	background: #FCFCFC;
     border-top: 1px solid #CECECE;
     margin:20px auto;
 }
+
 .section {
 	clear: both;
 	padding: 0px;
