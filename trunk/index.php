@@ -12,14 +12,17 @@
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
 <script type="text/javascript" src="js/startstop-slider.js"></script>
+
+
+
+
 </head>
 <body>
 	<div class="wrap">
 		<?php include 'modules/header_top.php'; ?>
-		
-		<?php include 'modules/content.php'; ?>
 
-		<div style="clear: both;"></div>
+		<?php include 'modules/content.php'; ?>
+		<div class="clear"></div>
 
 		<?php include 'modules/footer.php'; ?>
 

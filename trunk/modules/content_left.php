@@ -8,7 +8,7 @@
 	</div>
 	<div class="section group">
 	<?php 
-	$query = "select * from tbl_san_pham where phan_tram_sale > 0 order by ngay_nhap desc LIMIT 0,4";
+	$query = "select * from tbl_san_pham where phan_tram_sale > 0 order by ngay_nhap desc LIMIT 0,2";
 	$result = mysql_db_query ( "web_ban_quan_ao", $query );
 	if(!$result)
 	{
@@ -71,7 +71,7 @@
 		</div>
 		<div class="section1">
 		<?php 
-		$query = "select * from tbl_tin_tuc LIMIT 0,4";
+		$query = "select * from tbl_tin_tuc LIMIT 0,2";
 		$result = mysql_db_query ( "web_ban_quan_ao", $query );
 		if(!$result)
 		{
