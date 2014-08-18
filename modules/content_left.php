@@ -44,7 +44,7 @@
 		</p>
 	</div>
 	<div class="clear"></div>
-	<div class="hotrotructuyen">
+	<!-- <div class="hotrotructuyen">
 		<div class="content1_top">
 			<div class="heading">
 				<h3>Hỗ trợ trực tuyến</h3>
@@ -59,7 +59,7 @@
 			</ul>
 		</div>
 		<div class="clear"></div>
-	</div>
+	</div> -->
 
 	<div class="news">
 		<div class="content1_top">
