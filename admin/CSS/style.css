@@ -1,0 +1,76 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+}
+#banner {
+	background-color: #CC9;
+	height: 200px;
+	width: 100%;
+	background-image: url(../Img/home-banner.jpg);
+}
+#menu {
+	background-color: #999;
+	height: 600px;
+	width: 18%;
+	border: 1px solid #C30;
+	border-radius: 5px;
+	margin-top: 5px;
+	float: left;
+}
+#content {
+	float: right;
+	height: 600px;
+	width: 81%;
+	background-color: #CCC;
+	margin-top: 5px;
+	border: 1px solid #FC0;
+	border-radius: 5px;
+}
+div#menu a{
+	text-decoration:none;
+	color:#00F;
+}
+div#menu a:hover{
+	color:#903;
+}
+div.xoa
+	{
+		clear:both;
+	}
+div.box-chucnang{
+	width: 99%;
+	height: 80px;
+	background-color:#CCC;
+	border:1px solid #666;
+	border-radius:5px;
+	text-align:center;
+}
+div.box-chucnang:hover{
+	border:1px solid #F00;
+}
+div.top{
+	width:49%;
+	float:left;
+	border:1px solid #09F;
+	border-radius:5px;
+	
+}
+div.bottom{
+	width:100%;
+	float:left;
+	margin-top:50px;
+	border:1px solid #09F;
+	border-radius:5px;
+}
+#footer {
+	background-color: #C9C;
+	height: 150px;
+	width: 100%;
+	margin-top:5px;
+	border:1px solid #F66;
+	border-radius:5px;
+	
+}
+
