@@ -106,7 +106,7 @@
 											</ul>
 										</div>
 										<div class="button">
-											<span><a href="hoadonthanhtoan.html" title="">MUA HÀNG</a></span>
+											<span><a href="hoadonthanhtoan1.php" title="">MUA HÀNG</a></span>
 										</div>
 										<div class="clear"></div>
 									</div>
