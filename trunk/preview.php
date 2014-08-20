@@ -10,9 +10,9 @@
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
 <script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
-<link href="css/easy-responsive-tabs.css" rel="stylesheet"
-	type="text/css" media="all" />
+<link href="css/easy-responsive-tabs.css" rel="stylesheet"type="text/css" media="all" />
 <link rel="stylesheet" href="css/global.css">
+<link href="css/social.css" rel="stylesheet" type="text/css" media="all"/>
 <script src="js/slides.min.jquery.js"></script>
 <script>
 	$(function() {
@@ -76,14 +76,6 @@
 									<div class="available">
 										<p>Lựa chọn :</p>
 										<ul>
-											<li>Màu: 
-												<select>
-														<option>Bạc</option>
-														<option>Đen</option>
-														<option>Vàng</option>
-														<option>Đỏ</option>
-												</select>
-											</li>
 											<li>Size:<select>
 											<?php
 											$mang_size = explode ( ",", $row ["size"] );
@@ -109,18 +101,18 @@
 										<div class="share">
 											<p>Share:</p>
 											<ul>
-												<li><a href="#"><img src="images/facebook.png" alt="" /></a></li>
-												<li><a href="#"><img src="images/twitter.png" alt="" /></a></li>
+												<li><a href="facebook.com"><img src="images/facebook.png" alt="" /></a></li>
+												<li><a href="twitter.com"><img src="images/twitter.png" alt="" /></a></li>
 											</ul>
 										</div>
 										<div class="button">
-											<span><a href="#">MUA NGAY</a></span>
+											<span><a href="hoadonthanhtoan.html" title="">MUA HÀNG</a></span>
 										</div>
 										<div class="clear"></div>
 									</div>
 									<div class="wish-list">
 										<ul>
-											<li class="wish"><a href="#">Thêm vào giỏ hàng</a></li>
+											<li class="wish"><a href="addcart.php?id=<?php echo $row['id_san_pham'] ?>">Thêm vào giỏ hàng</a></li>
 										</ul>
 									</div>
 								</div>
@@ -145,10 +137,9 @@
 							<script type="text/javascript">
 								$(document).ready(function() {
 									$('#horizontalTab').easyResponsiveTabs({
-										type : 'default', //Types: default, vertical, accordion           
-										width : 'auto', //auto or any width like 600px
+										type : 'default',  
+										width : 'auto', 
 										fit : true
-									// 100% fit in a container
 									});
 								});
 							</script>
@@ -242,5 +233,11 @@
 		</script>
 		<a href="#" id="toTop"><span id="toTopHover"> </span></a>
 	</div>
+	<div class="clear"></div>
+			<ul id="social_side_links">
+				<li class="social-popout"><a href="http://facebook.com" target="_blank"><img src="images/social/facebook.png" alt="" /></a></li>
+				<li class="social-popout"><a href="http://skype.com" target="_blank"><img src="images/social/skype.png" alt="" /></a></li>
+				<li class="social-popout"><a href="http://yahoo.com" target="_blank"><img src="images/social/yahoo.png" alt="" /></a></li>
+			</ul>
 </body>
 </html>

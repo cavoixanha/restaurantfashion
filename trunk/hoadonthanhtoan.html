@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport"content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="css/slider.css" rel="stylesheet" type="text/css" media="all" />
+  <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="js/move-top.js"></script>
+  <script type="text/javascript" src="js/easing.js"></script>
+  <script type="text/javascript" src="js/startstop-slider.js"></script>
+  <title>Hoá đơn thanh toán</title>
+  <link href="css/social.css" rel="stylesheet" type="text/css" media="all"/>
+  <link rel="stylesheet" type="text/css" href="css/style_allhdft.css" />
+
+  <style> 
+  #wraper{ 
+    width:250px; 
+    height:480px; 
+    padding:20px; 
+    box-shadow:2px 2px 10px 10px #ccc; 
+    -webkit-box-shadow:2px 2px 10px 10x #ccc; 
+    -moz-box-shadow:2px 2px 10px 10px #ccc; 
+    font-family:Calibri, Arial, Helvetica; 
+    font-size:16px; 
+    text-shadow: 1px 1px #cccccc;
+    border-radius:3px; 
+    -moz-border-radius:3px; 
+    -ms-border-radius:3px -o-border-radius:3px; 
+    -webkit-border-radius:3px; 
+    top:50%; 
+    left:50%; 
+    margin-left:-145px; 
+    margin-top:-260px; 
+    position:fixed; 
+    overflow:hidden; 
+  } 
+  #wraper input{ 
+    font-family:Calibri, Arial, Helvetica; 
+  } 
+  #wraper h1{ 
+    font-weight:normal; 
+    font-size:24px; 
+  } 
+  #wraper label{ 
+    width:100%; 
+    float:left; 
+    margin-bottom:5px; 
+  } 
+  #wraper input[type=text],
+  #wraper input[type=email],
+  #wraper input[type=url],#wraper input[type=password], 
+  #wraper textarea{ 
+    width:240px; 
+    height:20px; 
+    float:left; 
+    padding:4px; 
+    border:1px solid #d5d5d5; 
+    outline:none; 
+    margin-bottom:15px; 
+    box-shadow: 5px 5px 2px #f1f1f1; 
+    -webkit-box-shadow: 5px 5px 2px #f1f1f1; 
+    -moz-box-shadow: 5px 5px 2px #f1f1f1; 
+    clear:both; 
+  } 
+  #wraper textarea{ 
+    resize:none; 
+    height:50px;
+  } 
+  #wraper input[type=submit], #wraper input[type=reset]{ 
+    padding:6px 10px; 
+    outline:none; 
+    border:none; 
+    cursor:pointer; 
+    color:#fff; 
+    background-image: linear-gradient(bottom, #0047CC, #0085CC); 
+    background-image: -o-linear-gradient(bottom, #0047CC, #0085CC); 
+    background-image: -moz-linear-gradient(bottom, #0047CC, #0085CC); 
+    background-image: -webkit-linear-gradient(bottom, #0047CC, #0085CC); 
+    background-image: -ms-linear-gradient(bottom, #0047CC, #0085CC); 
+    border-radius:3px; 
+    -moz-border-radius:3px; 
+    -ms-border-radius:3px ;
+    -o-border-radius:3px; 
+    -webkit-border-radius:3px; 
+    text-decoration:none; 
+    text-shadow: 1px 1px #0047CC; 
+    font-size:16px; 
+  } 
+</style> 
+</head>
+<body>
+  <?php include 'modules/header_top.php'; ?>
+  <div id="wraper"> 
+    <form action="hoadonthanhtoan.php" id="contactForm" name="contactForm" method="post" enctype="multipart/form-data"> 
+      <h1>Hóa Đơn Thanh Toán</h1> 
+      <label for="name">Họ và Tên:</label> 
+        <input type="text" name="name" value="" required="required" /> 
+      <label for="email">Email:</label> 
+        <input type="email" name="email" value="" required="required"  /> 
+      <label for="phone">Số điện thoại:</label> 
+        <input type="text" name="phone" id="phone" value="" pattern="^[0-9]\d{2}\d{3}\d{4}$" required /> 
+      <label for="address">Địa chỉ:</label> 
+        <input type="text" name="address" value="" required="required" /> 
+      <label for="message">Ghi chú về đơn hàng:</label> 
+        <textarea name="message" value="" required="required"></textarea> 
+      <input type="submit" id="frm_submit" value="Thực hiện thanh toán" name="submit" class="submit"  /> 
+      <input type='reset' id='reset' value='Nhập lại' />
+    </form> 
+  </div> 
+  <?php include 'modules/footer.php'; ?>
+  <script> 
+    $("#contactForm").submit(function(event) 
+      event.preventDefault();
+      $('#frm_submit').disabled=true; 
+      $('#frm_submit').val('loading...'); 
+      var $form = $( this ), 
+      name = $form.find( 'input[name="name"]' ).val(), 
+      email = $form.find( 'input[name="email"]' ).val(), 
+      phone = $form.find( 'input[name="phone"]' ).val(), 
+      website = $form.find( 'input[name="website"]' ).val(), 
+      message = $form.find( 'textarea[name="message"]' ).val(), 
+      url = $form.attr( 'action' ); 
+      var posting = $.post( url, { name: name,email: email,phone: phone,website: website,message: message, } );
+      posting.done(function( data ) {
+      alert(data); $('#frm_submit').disabled=false; 
+      $('#frm_submit').val('Submit Message'); }); });
+}
+//   </script>
+</script>
+</body>
+</html>

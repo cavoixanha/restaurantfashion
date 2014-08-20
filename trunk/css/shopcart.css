@@ -1,0 +1,71 @@
+/*body{
+	font-size: 12px;
+	color: #444;
+}
+a{
+	color: #48577d;	 	
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: underline;
+}
+h1,h2{
+	margin-bottom: 15px;
+}
+h1{
+	font-size: 18px;
+}
+h2{
+	font-size: 13px;
+}*/
+h1{
+	font-size: 20px;
+	text-transform: uppercase;
+	padding: 25px 0px;
+}
+button{
+	background-color: #bd1c1c;
+	color: #fbfffa;
+	font-weight: bold;
+	padding: 15px 25px;
+	cursor: pointer;
+	text-transform: uppercase;
+}
+button:hover{
+	background-color: #383838;
+}
+.tongtien{
+	text-transform: uppercase;
+	font-size: 18px;
+}
+#container{
+	/*width: 1000px;*/
+	/*width: 90%;*/
+	margin: 50px auto;
+	background: #eee;
+	padding: 20px;
+	overflow: hidden;
+}
+#main{
+	/*width: 700px;*/
+	float: left;
+}
+#main table{
+	width: 1000px;
+	float: left;
+}
+#main table th{
+	padding: 15px;
+	/*background-color: #48577d;*/
+	background-color: #383838;
+	color: #fff;
+	text-align: left;
+}
+#main table td{
+	padding: 10px;
+
+}
+#sidebar{
+	width: 600px;
+	float: left;
+}
