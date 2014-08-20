@@ -1,3 +1,6 @@
+<?php
+	$cartItemCount = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
+?>
 <div class="header">
 	<div class="headertop_desc">
 		<div class="call">
@@ -19,7 +22,6 @@
 						}
 						?>
 						<li><a href="#">Giỏ hàng</a></li>
-				<li><a href="#">Tài khoản của tôi</a></li>
 			</ul>
 		</div>
 		<div class="clear"></div>
@@ -30,7 +32,7 @@
 		</div>
 		<div class="cart">
 			<p>
-				<span>Giỏ hàng (0) :</span>
+				<span><a href="index_shopcart.php?page=cart">Giỏ hàng <?php echo "({$cartItemCount})"; ?></a></span>
 			
 			
 			<div id="dd" class="wrapper-dropdown-2">
@@ -48,7 +50,6 @@
 			<ul>
 				<li class="active"><a href="index.php">Trang chủ</a></li>
 				<li><a href="index.php?ac=about">Giới thiệu</a></li>
-				<!-- <li><a href="delivery.html">Sản phẩm</a></li> -->
 				<li><a href="index.php?ac=news">Tin tức</a></li>
 				<li><a href="index.php?ac=contact">Liên hệ</a></li>
 				<div class="clear"></div>
