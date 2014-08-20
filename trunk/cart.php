@@ -27,8 +27,33 @@
     }
 
 ?>
+<style type="text/css">
+    .tt a{
+        text-decoration: none;
+        color: #fff;
+    }
+    .back a{
+        color: blue;
+    }
+    th{
+        border: 1px solid #20a4ca;
+    }
+    td{
+        border: 1px solid #444;
+    }
+    .btntt{
+        border: 1px solid #444;
+        font-size: 20px;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    button{
+        margin-left: -1px;
+    }
+
+</style>
 <h1>GIỎ HÀNG</h1>
-<a href="index.php?page=preview">Trở về trang sản phẩm</a>
+<p class="back"><a href="index.php?page=preview">Trở về trang sản phẩm</a><p>
 <hr>
 <?php
     $ok=1;
@@ -93,7 +118,8 @@
             </tr>
             </table>
             <br/>
-            <button type="submit" name="submit">TÍNH TIỀN</button>
+            <button type="submit" name="submit">CẬP NHẬP</button>
+            <button type="submit" name="submit_tt" class="tt"><a href="hoadonthanhtoan1.php">THANH TOÁN</a></button>
 
 </form>
 <br />
