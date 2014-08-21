@@ -16,6 +16,10 @@
    <img src="Img/plugin_add.png" alt="error">
    <p><a href="indexs.php?quanly=thoi_trang_khac&ac=them">THỜI TRANG KHÁC</a></p>
 	</div>
+	 <div class="box-chucnang">
+   <img src="Img/plugin_add.png" alt="error">
+   <p><a href="indexs.php?quanly=thoi_trang_khac&ac=them">QUẢN LÝ ĐẶT HÀNG</a></p>
+	</div>
          <div class="box-chucnang">
    <img src="Img/close.gif" alt="error">
    <p>THOÁT</p>

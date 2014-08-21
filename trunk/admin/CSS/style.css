@@ -21,7 +21,7 @@ body{
 }
 #content {
 	float: right;
-	height: 600px;
+	height: auto;
 	width: 81%;
 	background-color: #CCC;
 	margin-top: 5px;

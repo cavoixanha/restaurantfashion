@@ -1,10 +1,46 @@
+ <?php 
+  	$sql="select*from tbl_danh_muc";
+  	$kq =mysql_query($sql);
+  ?>
 <link href="../../CSS/style.css" rel="stylesheet" type="text/css">
-<div >
+<form>
 <div style="float:left;margin-left:50px;margin-top:50px;border:1px solid #09F;border-radius:5px;">
+<table>
+	<tr>
+    <th width="150" scope="col">Danh mục sản phẩm</th>  
+    <th width="150" scope="col"><select name="id_danh_muc" id="id_danh_muc" >
+       <?php 
+  	while ($dong=mysql_fetch_assoc($kq))
+  	{
+  	?> 	
+    	<option  value="<?php echo $dong["id_danh_muc"] ?>"selected="<?php echo $dong["id_danh_muc"] ?>" >
+    	<?php echo $dong["ten_danh_muc"] ?>
+    	</option>
+    <?php 
+  		}
+ 	?>
+ 	    </select> 
+ 	</th>
+ 	 </tr>  	
+</table>
+<?php 
+  $query="select*from tbl_nhom_sp where id_danh_muc";
+  $resuil =mysql_query($query);
+  ?>
  <table width="300" border="1" cellpadding="1">
-  <tr>
+  <tr>   
     <th width="150" scope="col">Nhóm sản phẩm</th>
     <th width="150" scope="col"><select name="id_nhomsp" id="id_nhomsp" >
+    <?php 
+    while ($row=mysql_fetch_assoc($resuil))
+  	{
+  	?> 	
+    	<option value="<?php echo $row["id_nhom_sp"] ?> selected="selected" >
+    	<?php echo $row["ten_nhom_sp"] ?>
+    	</option>
+    <?php 
+  		}
+ 	?>
     </select></th>
   </tr>
 </table>
@@ -69,6 +105,5 @@
   </tr>
 </table>
 </div>
-</div>
-
+</form>
 

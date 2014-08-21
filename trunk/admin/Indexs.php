@@ -7,6 +7,7 @@
 </head>
 <body>
 	<?php 
+	include("config.php");
 	include("Modules/banner.php");
 	include("Modules/menu.php");
 	include("Modules/content.php");
