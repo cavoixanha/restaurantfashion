@@ -68,12 +68,40 @@
 								</div>
 								<div class="desc span_3_of_2">
 									<h2><?php echo $row['ten_san_pham'] ?></h2>
+									<?php
+									if ($row['phan_tram_sale'] == 0 ) {
+									?>
 									<div class="price">
 										<p>
-											Giá: <span><?php echo $row['gia']*(100-$row['phan_tram_sale'])/100 ?></span>
+											Giá: <span><?php echo $row['gia'] ?></span> VNĐ
 										</p>
 									</div>
+									<?php 
+									}else{ 
+									?>
+									<div class="price">
+										<p>
+											Giá: <span><?php echo $row['gia']*(100-$row['phan_tram_sale'])/100 ?></span> VNĐ
+										</p>
+									</div>
+									<div class="price-sale">
+										<p>
+											Giá Niêm Yết: <span><?php echo $row['gia'] ?></span> VNĐ
+										</p>
+									</div>
+									<?php 
+									}
+									?>
 									<div class="available">
+										<?php
+										if($row["so_luong"] == 0)
+										{
+										?>
+										<p>Hết Hàng</p>
+										<?php
+										}else{
+										?>
+										<p>Số Lượng Còn <?php echo $row["so_luong"] ?></p>
 										<p>Lựa chọn :</p>
 										<ul>
 											<li>Size:<select>
@@ -96,6 +124,9 @@
 													<option>5</option>
 											</select></li>
 										</ul>
+										<?php 
+										}
+										?>
 									</div>
 									<div class="share-desc">
 										<div class="share">

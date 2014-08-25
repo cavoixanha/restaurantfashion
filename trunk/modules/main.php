@@ -48,11 +48,11 @@ while ( $row = mysql_fetch_assoc ( $result ) ) {
 </div>
 <div class="content_bottom">
 	<div class="heading">
-		<h3>Danh mục sản phẩm</h3>
+		<h3>Nhóm Sản Phẩm</h3>
 	</div>
 	<div class="see">
 		<p>
-			<a href="#">Xem tất cả</a>
+			<a href="index.php?ac=all_nhom_sp">Xem tất cả</a>
 		</p>
 	</div>
 	<div class="clear"></div>
@@ -75,10 +75,6 @@ while ( $row = mysql_fetch_assoc ( $result ) ) {
 		<h2><?php echo $row['ten_nhom_sp'] ?></h2>
 	</div>
 	<?php
-		/* if ($count == 4) {
-			echo "<div style='clear:both'></div>";
-			$count = 0;
-		} */
 	}
 	?>
 </div>

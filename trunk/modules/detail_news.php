@@ -19,21 +19,12 @@
 						Đăng ngày <?php echo $row_tintuc['ngay_dang'] ?> bởi <span><a
 						href="#">quiviteam</a></span>
 				</h4>
-					<?php echo $row_tintuc['noi_dung'] ?><a href="#" title="more">[....]</a>
+					<?php echo $row_tintuc['noi_dung'] ?>
 			</div>
 		</div>
 		<?php
 			}
 		}
 		?>
-		<div class="content-pagenation">
-			<li><a href="#">Frist</a></li>
-			<li class="active"><a href="#">1</a></li>
-			<li><a href="#">2</a></li>
-			<li><a href="#">3</a></li>
-			<li><span>....</span></li>
-			<li><a href="#">Last</a></li>
-			<div class="clear"></div>
-		</div>
 	</div>
 </div>

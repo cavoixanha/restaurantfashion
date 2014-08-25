@@ -16,8 +16,8 @@
 							echo '<li><a href="modules/xuly.php?ac=logout">Đăng Xuất</a></li>';
 						} else {
 							?>
-							<li><a href="register.php">Đăng Ký</a></li>
-				<li><a href="login.php">Đăng nhập</a></li> 
+							<li><a href="manager_acc_kh.php?ac=register">Đăng Ký</a></li>
+							<li><a href="manager_acc_kh.php?ac=login">Đăng nhập</a></li> 
 						<?php
 						}
 						?>
@@ -56,10 +56,15 @@
 			</ul>
 		</div>
 		<div class="search_box">
-			<form>
-				<input type="text" value="Tìm kiếm" onfocus="this.value = '';"
-					onblur="if (this.value == '') {this.value = 'Search';}"><input
-					type="submit" value="">
+			<form action = "index.php" method = "get">
+				<input type="hidden" name="ac" value="timkiem">
+				<input type="text" name="tim" value="<?php
+				if (isset($_GET['tim'])) {
+					echo $_GET['tim'];
+				}else{
+					echo "Tìm kiếm";
+				} ?>" onfocus="this.value = '';">
+				<input type="submit" value="">
 			</form>
 		</div>
 		<div class="clear"></div>

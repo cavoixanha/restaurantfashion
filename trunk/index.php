@@ -36,7 +36,11 @@
 <script type="text/javascript" src="js/startstop-slider.js"></script>
 <link href="css/social.css" rel="stylesheet" type="text/css" media="all"/>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".grid_1_of_4:nth-child(4n+1)").addClass("grid_1_of_4_first");
+});
+</script>
 </head>
 <body>
 	<div class="wrap">
