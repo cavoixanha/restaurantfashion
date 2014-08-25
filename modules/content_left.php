@@ -17,7 +17,7 @@
 	while ( $row = mysql_fetch_assoc ( $result ) ) {
 	?>
 		<div class="grid_1_of_41 images_1_of_41">
-			<a href="preview.html"><img src="<?php echo $row['anh_dai_dien'] ?>"
+			<a href="preview.php?id=<?php echo $row['id_san_pham'] ?>"><img src="<?php echo $row['anh_dai_dien'] ?>"
 				alt="" /></a>
 			<h2><?php echo $row['ten_san_pham'] ?></h2>
 			<div class="price-details1">
