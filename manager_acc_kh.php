@@ -9,15 +9,17 @@
 	content="expand, form, css3, jquery, animate, width, height, adapt, unobtrusive javascript" />
 <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" type="text/css" href="css/style_allhdft.css" />
+<link rel="stylesheet" type="text/css" href="css/social.css" />
 <script type="text/javascript"
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>');</script>
 </head>
 <body>
-	<div class="wrapper">
-		<div class="logo_lg">
+	<div class="wrap">
+		<!-- <div class="logo_lg">
 			<a href="index.php"><img src="images/logo1.png" alt="" /></a>
-		</div>
+		</div> -->
+		<?php include 'modules/header_top.php'; ?>
 		<div class="content">
 			<div id="form_wrapper" class="form_wrapper">
 				<form class="register" action="modules/xuly.php?ac=register"
@@ -179,5 +181,12 @@
 							 });	 */
 			});
         </script>
+        <div class="clear"></div>
+			<ul id="social_side_links">
+				<li class="social-popout"><a href="http://facebook.com" target="_blank"><img src="images/social/facebook.png" alt="" /></a></li>
+				<li class="social-popout"><a href="http://skype.com" target="_blank"><img src="images/social/skype.png" alt="" /></a></li>
+				<li class="social-popout"><a href="http://yahoo.com" target="_blank"><img src="images/social/yahoo.png" alt="" /></a></li>
+			</ul>
+		<?php include 'modules/footer.php'; ?>
 </body>
 </html>

@@ -21,7 +21,7 @@
 						<?php
 						}
 						?>
-						<li><a href="#">Giỏ hàng</a></li>
+						<li><a href="index_shopcart.php?page=cart">Giỏ hàng <?php echo "({$cartItemCount})"; ?></a></li>
 			</ul>
 		</div>
 		<div class="clear"></div>
