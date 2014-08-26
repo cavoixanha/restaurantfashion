@@ -13,5 +13,6 @@
 	$_SESSION['cart'][$id]=$qty;
 	
 	header("location:index_shopcart.php?page=cart");
+	
 	exit();
 ?>

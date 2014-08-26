@@ -55,15 +55,8 @@ $(document).ready(function(){
 				<li class="social-popout"><a href="http://yahoo.com" target="_blank"><img src="images/social/yahoo.png" alt="" /></a></li>
 			</ul>
 
-		<?php include 'modules/footer.php'; ?>
-
-		<script type="text/javascript">
-		$(document).ready(function() {			
-			$().UItoTop({ easingType: 'easeOutQuart' });
-			
-		});
-	</script>
-		<a href="#" id="toTop"><span id="toTopHover"> </span></a>
+		<?php include 'modules/footer.php'; ?>	
 	</div>
+		
 </body>
 </html>

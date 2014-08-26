@@ -1,58 +1,58 @@
 <?php
-if(isset($_POST['submit'])){
+  if(isset($_POST['submit'])){
 
-$name = $_POST['name'] ;
-$email = $_POST['email'] ;
-$phone = $_POST['phone'] ;
-$address = $_POST['address'] ;
-$message = $_POST['message'] ;
+  $name = $_POST['name'] ;
+  $email = $_POST['email'] ;
+  $phone = $_POST['phone'] ;
+  $address = $_POST['address'] ;
+  $message = $_POST['message'] ;
 
-$message=
-'Name: '.$_POST['name'].'<br />
-Email:  '.$_POST['email'].'<br />
-Phone:  '.$_POST['phone'].'<br />
-Address:  '.$_POST['address'].'<br />
-Message: '.$_POST['message'].'
-';
+  $message=
+  'Name: '.$_POST['name'].'<br />
+  Email:  '.$_POST['email'].'<br />
+  Phone:  '.$_POST['phone'].'<br />
+  Address:  '.$_POST['address'].'<br />
+  Message: '.$_POST['message'].'
+  ';
 
-require'phpmail/class.phpmailer.php';
-require'phpmail/class.smtp.php';
+  require'phpmail/class.phpmailer.php';
+  require'phpmail/class.smtp.php';
 
-$mail = new PHPMailer();
+  $mail = new PHPMailer();
 
-$mail->IsSMTP();
+  $mail->IsSMTP();
 
-$mail->Host = "smtp.gmail.com";  
-$mail->SMTPSecure = 'ssl';
-$mail->SMTPAuth = true;    
-$mail->Port = 465;  
+  $mail->Host = "smtp.gmail.com";  
+  $mail->SMTPSecure = 'ssl';
+  $mail->SMTPAuth = true;    
+  $mail->Port = 465;  
 
-$mail->Username = "vietmail12593@gmail.com"; 
-$mail->Password = "sweetdream";
+  $mail->Username = "vietmail12593@gmail.com"; 
+  $mail->Password = "sweetdream";
 
-$mail->AddAddress("vietmail12593@gmail.com", "Khach Hang");
+  $mail->AddAddress("vietmail12593@gmail.com", "Khach Hang");
 
 
-$mail->WordWrap = 50;
+  $mail->WordWrap = 50;
 
-$mail->IsHTML(true);
+  $mail->IsHTML(true);
 
-$mail->Subject = "Thanh Toan Don Hang";
-$mail->SetFrom($_POST['email'], $_POST['name']);
-$mail->AddReplyTo($_POST['email'], $_POST['name']);
+  $mail->Subject = "Thanh Toan Don Hang";
+  $mail->SetFrom($_POST['email'], $_POST['name']);
+  $mail->AddReplyTo($_POST['email'], $_POST['name']);
 
-$mail->Body    = $message;
-$mail->AltBody = $message;
+  $mail->Body    = $message;
+  $mail->AltBody = $message;
 
-if(!$mail->Send())
-{
-   echo "Thực hiện thanh toán không thành công. Vui lòng kiểm tra lại. Xin cám ơn!!!. <p>";
-   echo "Mailer Error: " . $mail->ErrorInfo;
-   exit;
-}
-echo "Thực hiện thanh toán thành công. Xin cám ơn!!!.";
-echo "Cám ơn, ".$name;
-exit();
+  if(!$mail->Send())
+  {
+     echo "Thực hiện thanh toán không thành công. Vui lòng kiểm tra lại. Xin cám ơn!!!. <p>";
+     echo "Mailer Error: " . $mail->ErrorInfo;
+     exit;
+  }
+  echo "Thực hiện thanh toán thành công. Xin cám ơn!!!.";
+  echo "Cám ơn, ".$name;
+  exit();
 
 }
 ?>
@@ -67,11 +67,12 @@ exit();
   <link href="css/social.css" rel="stylesheet" type="text/css" media="all"/>
   <link rel="stylesheet" type="text/css" href="css/style_allhdft.css" />
 
-  <style> 
+<style> 
   #wraper{ 
+    float: left; 
     margin: 30px auto;
     width:250px; 
-    height:480px; 
+    height:380px; 
     padding:20px; 
     -moz-box-shadow:1px 1px 7px #ccc;
     -webkit-box-shadow:1px 1px 7px #ccc;
@@ -124,14 +125,14 @@ exit();
     height:50px;
   } 
   #wraper input[type=submit], #wraper input[type=reset]{ 
-    margin: 5px 16px;
+    margin: 5px 4px;
     background: #bd1c1c;
     border: 1px solid #bd1c1c;
     color: white;
     font-family:arial,sans-serif;
     font-size: 14px;
     font-weight: bold;
-    padding: 6px 10px;
+    padding: 8px 25px;
     cursor:pointer;
 
   } 
@@ -141,7 +142,7 @@ exit();
   <div class="wrap">
     <?php include 'modules/header_top.php'; ?>     
     <div id="wraper" > 
-            <form action="" id="contactForm" name="contactForm" method="post" enctype="multipart/form-data"> 
+            <form action="" id="contactForm" name="contactForm" method="post" enctype="multipart/form-data" > 
               <h1>Thanh Toán Đơn Hàng</h1> 
               <label for="name">Họ và Tên:</label> 
                 <input type="text" name="name" value="" required="required" /> 
@@ -151,19 +152,20 @@ exit();
                 <input type="text" name="phone" id="phone" value="" pattern="^[0-9]\d{2}\d{3}\d{5}$" required /> 
               <label for="address">Địa chỉ:</label> 
                 <input type="text" name="address" value="" required="required" /> 
-              <label for="message">Ghi chú về đơn hàng:</label> 
-                <textarea name="message" value="" required="required"></textarea> 
-              <input type="submit" id="frm_submit" value="Thanh toán" name="submit" class="submit"  /> 
+              <!-- <label for="message">Ghi chú về đơn hàng:</label> 
+                <textarea name="message" value="" required="required"></textarea>  -->
+              <input type="submit" id="frm_submit" value="Xác nhận " name="submit" class="submit"  /> 
               <input type='reset' id='reset' value='Nhập lại' />
             </form> 
     </div> 
+     
     <div class="clear"></div>
         <ul id="social_side_links">
           <li class="social-popout"><a href="http://facebook.com" target="_blank"><img src="images/social/facebook.png" alt="" /></a></li>
           <li class="social-popout"><a href="http://skype.com" target="_blank"><img src="images/social/skype.png" alt="" /></a></li>
           <li class="social-popout"><a href="http://yahoo.com" target="_blank"><img src="images/social/yahoo.png" alt="" /></a></li>
         </ul>
-    <?php include 'modules/footer.php'; ?>
+    
     
       <script type="text/javascript">
       $(document).ready(function() {      
