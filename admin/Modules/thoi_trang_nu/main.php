@@ -1,4 +1,4 @@
-<<?php 
+<?php 
 	if(isset($_GET["ac"]))
 	{
 		$ac = $_GET["ac"];
