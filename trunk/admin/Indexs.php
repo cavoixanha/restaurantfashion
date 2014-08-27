@@ -4,6 +4,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
 <link href="CSS/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+// $(document).ready(function(){
+// 	$('.id_nhomsp').append("<option>nam</option>");
+// 	$('#footer').append("<option>sss</option>");
+// });
+</script>
 </head>
 <body>
 	<?php 
