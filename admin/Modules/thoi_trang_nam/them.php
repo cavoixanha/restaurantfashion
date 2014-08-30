@@ -3,14 +3,14 @@
   	$kq =mysql_query($sql);
   ?>
 <link href="../../CSS/style.css" rel="stylesheet" type="text/css">
-<form>
+<form action="Modules/thoi_trang_nam/xuly.php">
 <div style="float:left;margin-left:50px;margin-top:50px;border:1px solid #09F;border-radius:5px;">
 <table>
 	<tr>
     <th width="150" scope="col">Danh mục sản phẩm</th>  
     <th width="150" scope="col"><select name="id_danh_muc" id="id_danh_muc" >
        <?php 
-  	while ($dong=mysql_fetch_assoc($kq))
+  	while ($dong=mysql_fetch_array($kq))
   	{
   	?> 	
     	<option  value="<?php echo $dong["id_danh_muc"] ?>"selected="<?php echo $dong["id_danh_muc"] ?>" >
@@ -19,20 +19,21 @@
     <?php 
   		}
  	?>
+ 	<?php 
+  $query="select*from tbl_nhom_sp where id_danh_muc";
+  $resuil =mysql_query($query);
+  ?>
  	    </select> 
  	</th>
  	 </tr>  	
 </table>
-<?php 
-  $query="select*from tbl_nhom_sp where id_danh_muc";
-  $resuil =mysql_query($query);
-  ?>
+
  <table width="300" border="1" cellpadding="1">
   <tr>   
     <th width="150" scope="col">Nhóm sản phẩm</th>
     <th width="150" scope="col"><select name="id_nhomsp" id="id_nhomsp" >
     <?php 
-    while ($row=mysql_fetch_assoc($resuil))
+    while ($row=mysql_fetch_array($resuil))
   	{
   	?> 	
     	<option value="<?php echo $row["id_nhom_sp"] ?> selected="selected" >
@@ -46,7 +47,7 @@
 </table>
 </div>
 <div class="top" style="margin-left:50px">
-	<table width="400" border="1" cellpadding="1" style="text-align:left">
+	<table width="100%" border="1" cellpadding="1" style="text-align:left">
 	<tr width="166" scope="row">
     	<td colspan="2" style="text-align:center">THÊM SẢN PHẨM NAM</td>
     </tr>
@@ -54,50 +55,48 @@
     <th width="166" scope="row">Tên sản phẩm</th>
     <td width="218"><input type="text" name="ten_sp" id="ten_sp"></td>
   </tr>
+  <?php
+ $sqlSize = "select size from tbl_san_pham";
+ $resuilSize = mysql_query ( $sqlSize );
+?>
   <tr>
     <th scope="row">Size</th>
-    <td><label for="size"></label>
-      <input type="text" name="size" id="size"></td>
+    <td><input type="text" name="size" id="size" /></td>
   </tr>
   <tr>
     <th scope="row">Giới tính</th>
-    <td><label for="gioi_tinh"></label>
-      <input type="text" name="gioi_tinh" id="gioi_tinh"></td>
+    <td><select name="selectSex" id="selectSex">
+    <option value="true">Nam</option>
+    <option value="false">Nữ</option>
+      </select></td></td>
   </tr>
   <tr>
     <th scope="row">Giá</th>
-    <td><label for="gia"></label>
-      <input type="text" name="gia" id="gia"></td>
+    <td><input type="text" name="gia" id="gia"></td>
   </tr>
   <tr>
     <th scope="row">Số lượng</th>
-    <td><label for="so_luong"></label>
-      <input type="text" name="so_luong" id="so_luong"></td>
+    <td><input type="text" name="so_luong" id="so_luong"></td>
   </tr>
   <tr>
     <th scope="row">Phần trăm Sale</th>
-    <td><label for="phan_tram_giam"></label>
-      <input type="text" name="phan_tram_giam" id="phan_tram_giam"></td>
+    <td><input type="text" name="phan_tram_giam" id="phan_tram_giam"></td>
   </tr>
   <tr>
     <th scope="row">Tiêu đề</th>
-    <td><label for="tieu_de"></label>
-      <input type="text" name="tieu_de" id="tieu_de"></td>
+    <td><input type="text" name="tieu_de" id="tieu_de"></td>
   </tr>
   <tr>
     <th scope="row">Ảnh đại diện</th>
-    <td><label for="anh_dai_dien"></label>
-      <input type="text" name="anh_dai_dien" id="anh_dai_dien"></td>
+    <td><input type="file" name="Upload" id="Upload" /></td>
   </tr>
   <tr>
     <th scope="row">Nội dung</th>
-    <td><label for="noi_dung"></label>
-      <input type="text" name="noi_dung" id="noi_dung"></td>
+    <td><textarea class="ckeditor" name="noidung"></textarea></td>
   </tr>
   <tr>
     <th scope="row">Ngày nhập</th>
-    <td><label for="ngay_nhap"></label>
-      <input type="text" name="ngay_nhap" id="ngay_nhap"></td>
+    <td><input type="datetime""ngay_nhap" id="ngay_nhap"></td>
   </tr>
   <tr style="margin:30px">
     <th scope="row" colspan="2" ><input type="submit" name="btnSave" id="btnSave" value="Save" style="margin-left:100px">

@@ -18,7 +18,19 @@
 	</div>
 	 <div class="box-chucnang">
    <img src="Img/plugin_add.png" alt="error">
-   <p><a href="indexs.php?quanly=thoi_trang_khac&ac=them">QUẢN LÝ ĐẶT HÀNG</a></p>
+   <p><a href="indexs.php?quanly=dat_hang&ac=them">QUẢN LÝ ĐẶT HÀNG</a></p>
+	</div>
+		 <div class="box-chucnang">
+   <img src="Img/plugin_add.png" alt="error">
+   <p><a href="indexs.php?quanly=danh_muc_sp&ac=them">DANH MỤC SẢN PHẨM</a></p>
+	</div>
+		 <div class="box-chucnang">
+   <img src="Img/plugin_add.png" alt="error">
+   <p><a href="indexs.php?quanly=loai_san_pham&ac=them">NHÓM SẢN PHẨM</a></p>
+	</div>
+    <div class="box-chucnang">
+   <img src="Img/plugin_add.png" alt="error">
+   <p><a href="indexs.php?quanly=tin_tuc&ac=them">TIN TỨC</a></p>
 	</div>
          <div class="box-chucnang">
    <img src="Img/close.gif" alt="error">
