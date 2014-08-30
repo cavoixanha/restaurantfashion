@@ -18,10 +18,7 @@
     <th scope="col">Tên sản phẩm</th>
     <th scope="col">Nhóm sản phẩm</th>
     <th scope="col">Size</th>
-    <th scope="col">Giới tính</th>
     <th scope="col">Giá</th>
-    <th scope="col">Số lượng</th>
-    <th scope="col">Phần trăm sale</th>
     <th scope="col">Tiêu đề</th>
     <th style="width: 100px">Ảnh đại diện</th>
     <th scope="col">Nội dung</th>
@@ -44,14 +41,11 @@
 	while ($dong = mysql_fetch_assoc($rows)) {
 	?>
   <tr>
- 	 <td><?php echo $i ?></td>
+ 	 <td><?php echo $i++?></td>
     <td><?php echo $dong['ten_san_pham']?></td>
     <td><?php echo $dong['id_nhom_sp']?></td>
     <td><?php echo $dong['size']?></td>
-    <td><?php echo $dong['gioi_tinh']?></td>
     <td><?php echo $dong['gia']?></td>
-    <td><?php echo $dong['so_luong']?></td>
-    <td><?php echo $dong['phan_tram_sale']?></td>
     <td><?php echo $dong['tieu_de']?></td>
     <td style="width: 100px"><?php echo $dong['anh_dai_dien']?></td>
     <td><?php echo $dong['noi_dung']?></td>

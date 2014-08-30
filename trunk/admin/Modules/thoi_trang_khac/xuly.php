@@ -1,5 +1,5 @@
 <?php 
-	include ("../../config.php");
+	include ("../config.php");
 	$loaisanpham=$_POST["id_nhomsp"];
 	$tensanpham=$_POST["ten_sp"];
 	$size=$_POST["size"];

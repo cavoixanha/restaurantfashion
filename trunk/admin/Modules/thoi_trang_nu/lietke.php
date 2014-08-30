@@ -44,7 +44,7 @@
 	while ($dong = mysql_fetch_assoc($rows)) {
 	?>
   <tr>
-  	<td><?php echo $i ?></td>
+  	<td><?php echo $i++?></td>
     <td><?php echo $dong['ten_san_pham']?></td>
     <td><?php echo $dong['id_nhom_sp']?></td>
     <td><?php echo $dong['size']?></td>
@@ -57,14 +57,14 @@
     <td><?php echo $dong['noi_dung']?></td>
     <td><?php echo $dong['ngay_nhap']?></td>
     <td width="50px">
-   		<a href="Indexs.php?quanly=thoi_trang_nam&ac=sua">Sửa</a>
+   		<a href="Indexs.php?quanly=thoi_trang_nu&ac=sua">Sửa</a>
     </td>
     <td width="50px">
-    <a href="Modules/thoi_trang_khac/xuly.php?id=<?php echo $dong['id_san_pham']?>">Xóa</a>
+    <a href="Modules/thoi_trang_nu/xuly.php?id=<?php echo $dong['id_san_pham']?>">Xóa</a>
     </td>
   </tr>
   <?php 
-  	}
+  	} 	
   ?>
 </table>
 </div>

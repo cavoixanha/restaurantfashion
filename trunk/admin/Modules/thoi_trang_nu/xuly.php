@@ -1,5 +1,5 @@
 <?php 
-	include ("../../config.php");
+	include ("../config.php");
 	$loaisanpham=$_POST["id_nhomsp"];
 	$tensanpham=$_POST["ten_sp"];
 	$size=$_POST["size"];
@@ -20,11 +20,11 @@
 	}
 	else if (isset($_POST["sua"]))
 	{
-		//code sua
+		
 	}else
 	{
 		$sql="delete from tbl_san_pham where id_san_pham='$id'";
 		mysql_query($sql);
-		//header("location:../../Indexs.php?quanly=thoi_trang_khac&ac=them");
+		header("location:../../Indexs.php?quanly=thoi_trang_nu&ac=them");
 	}
 ?>
